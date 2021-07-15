@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/test/testForm', [HomeController::class, 'testForm']);
+
 Route::get('/test/{id}', [HomeController::class, 'testDetail']);
 
 Route::get('/test', [HomeController::class, 'test']);
 
 Route::get('/', [HomeController::class, 'index'] );
+
+

@@ -18,4 +18,9 @@ class HomeController extends Controller
     {
         return view('test/test', ['id' => $id] );
     }
+
+    public function testForm()
+    {
+        return view('test/testForm');
+    }
 }
