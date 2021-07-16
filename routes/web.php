@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/modal/forAjax', [AjaxController::class, 'forAjaxUp'])
+    ->name('forAjax');
+
 Route::get('/test/testForm', [HomeController::class, 'testForm']);
 
 Route::get('/test/{id}', [HomeController::class, 'testDetail']);
