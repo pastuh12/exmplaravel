@@ -26,5 +26,5 @@ Route::get('/test/{id}', [HomeController::class, 'testDetail']);
 Route::get('/test', [HomeController::class, 'test']);
 
 Route::get('/', [HomeController::class, 'index'] );
-
+//fghjhgf
 
