@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/modal/forAjax', [AjaxController::class, 'forAjaxUp'])
+Route::post('/add-user', [AjaxController::class, 'forPostAjax'])->name('postAjax');
+
+Route::get('/modal/forAjax', [AjaxController::class, 'forGetAjax'])
     ->name('forAjax');
 
 Route::get('/test/testForm', [HomeController::class, 'testForm']);
@@ -26,5 +29,11 @@ Route::get('/test/{id}', [HomeController::class, 'testDetail']);
 Route::get('/test', [HomeController::class, 'test']);
 
 Route::get('/', [HomeController::class, 'index'] );
+
+
+
+//убрать после теста
+Route::get('/postRec', [TestController::class, 'postTest']);
+Route::post('/postRectext', [TestController::class, 'postTest2'])->name('postTest2');
 
 
