@@ -17,12 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/add-user', [AjaxController::class, 'forPostAjax'])->name('postAjax');
 
-Route::get('/modal/forAjax', [AjaxController::class, 'forGetAjax'])
-    ->name('forAjax');
 
-Route::get('/test/testForm', [HomeController::class, 'testForm']);
+Route::post('/test/testForm', [AjaxController::class, 'forPostAjax'])->name('postAjax');
+
+Route::get('/test/testForm', [HomeController::class, 'testForm'])->name('forAjax');
+
+//Route::get('/test/testForm', [AjaxController::class, 'forGetAjax'])->name('forAjax');
 
 Route::get('/test/{id}', [HomeController::class, 'testDetail']);
 

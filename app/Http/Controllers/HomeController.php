@@ -4,6 +4,10 @@
 namespace App\Http\Controllers;
 
 
+//use http\Env\Request;
+
+use Illuminate\Http\Request;
+
 class HomeController extends Controller
 {
     public function index()
@@ -19,8 +23,15 @@ class HomeController extends Controller
         return view('test/test', ['id' => $id] );
     }
 
-    public function testForm()
+    public function testForm(Request $request)
     {
-        return view('test/testForm');
+        if ($request->ajax() === true){
+            $ajax = new AjaxController();
+            return $ajax->forGetAjax();
+        }
+        else {
+            return view('test/testForm');
+
+        }
     }
 }
