@@ -1,2 +1,2 @@
-@dump(request())
+@dump(request()->id);
 test

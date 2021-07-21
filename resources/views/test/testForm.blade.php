@@ -18,10 +18,8 @@
 <script>
     modelButton = $('#open-add-user');
     postForm = $('#postForm');
-    console.log("here1");
     modelButton.click(('click', function (e){
         e.preventDefault();
-        console.log("here2");
         axios.get("{{route('forAjax')}}")
             .then(function (response){
                 console.log(response);
@@ -33,10 +31,10 @@
     }));
     postForm.submit((function (e){
         e.preventDefault();
-        console.log("here3")
         let name = $('#name').val();
         let email = $('#email').val();
         let _token = $('#postForm [name="_token"]').val();
+        console.log('name ' + name + ' email ' + email + ' _token ' + _token);
         axios.post("{{route('postAjax')}}", {
             name: name,
             email: email,
