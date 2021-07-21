@@ -18,9 +18,7 @@ class AjaxController extends Controller
      */
     public function forPostAjax(Request $request):void
     {
-        $user = new User();
-        $user->name = $request->all()['name'];
-        $user->email = $request->all()['email'];
+        $user = User::create(['name' => $request->name, 'email' => $request->email]);
 
         //$user->save();
     }
